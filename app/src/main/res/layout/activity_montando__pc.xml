@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.raffa.pcmr.Montando_PC">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Placa Mae"
+        android:id="@+id/buttonPlacaMae"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/buttonProcessador"
+        android:onClick="chamaPlacaMae"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEU PC"
+        android:id="@+id/buttonMeuPc"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="chamaMeuPc"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RAM"
+        android:id="@+id/buttonRAM"
+        android:layout_below="@+id/buttonPlacaMae"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/buttonPlacaMae"
+        android:onClick="chamaRAM"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SSD"
+        android:id="@+id/buttonSSD"
+        android:layout_below="@+id/buttonRAM"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/buttonRAM"
+        android:onClick="chamaSSD"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gabinete"
+        android:id="@+id/buttonGabinete"
+        android:layout_below="@+id/buttonSSD"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/buttonSSD"
+        android:onClick="chamaGabinete"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Placa de Video"
+        android:id="@+id/buttonVGA"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/buttonProcessador"
+        android:onClick="chamaPlacaVideo"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HD"
+        android:id="@+id/buttonHD"
+        android:layout_below="@+id/buttonVGA"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/buttonVGA"
+        android:onClick="chamaHD"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fonte"
+        android:id="@+id/buttonFonte"
+        android:layout_alignTop="@+id/buttonSSD"
+        android:layout_alignStart="@+id/buttonHD"
+        android:layout_alignEnd="@+id/buttonHD"
+        android:onClick="chamaFonte"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cooler Proc."
+        android:id="@+id/buttonCoolerProc"
+        android:layout_below="@+id/buttonFonte"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/buttonFonte"
+        android:onClick="chamaCoolerProc"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Processador"
+        android:id="@+id/buttonProcessador"
+        android:layout_above="@+id/buttonPlacaMae"
+        android:layout_centerHorizontal="true"
+        android:onClick="chamaProcessador"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Escolha suas peças:"
+        android:id="@+id/textView2"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/buttonMeuPc"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:id="@+id/buttonResetAll"
+        android:layout_above="@+id/textView2"
+        android:onClick="resetAll"/>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/deletar_pc"
+        android:title="Deletar PC" />
+    <item android:id="@+id/alterar_pc"
+        android:title="Alterar PC" />
+</menu>

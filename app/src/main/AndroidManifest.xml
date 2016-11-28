@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.raffa.pcmr">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Tela_Inicial">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Novo_Computador" />
+        <activity android:name=".Montando_PC" />
+        <activity android:name=".Meu_PC" />
+        <activity android:name=".Peca_Geral" />
+        <activity android:name=".Faltam_Pecas" />
+        <activity android:name=".Lista_Computadores" />
+        <activity android:name=".Computador_Item"></activity>
+    </application>
+
+</manifest>
