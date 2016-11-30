@@ -1,11 +1,13 @@
 package com.example.raffa.pcmr;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class Montando_PC extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "";
@@ -120,7 +122,7 @@ public class Montando_PC extends AppCompatActivity {
     protected void chamaCoolerProc(View view){
         Intent coolerProc = new Intent(this, Peca_Geral.class);
         //pecas diferentes, chamam a mesma activity com outras informçoes
-        String message = "Cooler do Processador";
+        String message = "Cooler";
         coolerProc.putExtra(EXTRA_MESSAGE, message);
         startActivity(coolerProc);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -141,5 +143,9 @@ public class Montando_PC extends AppCompatActivity {
         editor.putString("pecaplaca_video","");
         editor.putString("pecacooler_processador","");
         editor.apply();
+        Context context = getApplicationContext();
+        CharSequence mensagem = "Resetou!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast.makeText(context,mensagem, duration).show();
     }
 }

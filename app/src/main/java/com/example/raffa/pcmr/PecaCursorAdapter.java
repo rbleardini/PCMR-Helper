@@ -41,6 +41,12 @@ public class PecaCursorAdapter extends CursorAdapter {
             TextView tvThreads = (TextView) view.findViewById(R.id.tvColuna3);
             TextView tvFrequencia = (TextView) view.findViewById(R.id.tvColuna4);
             TextView tvSocket = (TextView) view.findViewById(R.id.tvColuna5);
+            //hue
+            tvNome.setText("Nome");
+            tvNucleos.setText("Nucleos");
+            tvThreads.setText("Thread");
+            tvFrequencia.setText("Frequencia");
+            tvSocket.setText("Sockte");
             // Extract properties from cursor
             String nome = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
             int nucleos = cursor.getInt(cursor.getColumnIndexOrThrow("n_nucleos"));
@@ -64,6 +70,8 @@ public class PecaCursorAdapter extends CursorAdapter {
             TextView tvColuna7 = (TextView) view.findViewById(R.id.tvColuna7);
             TextView tvColuna8 = (TextView) view.findViewById(R.id.tvColuna8);
             TextView tvColuna9 = (TextView) view.findViewById(R.id.tvColuna9);
+            TextView tvColuna10 = (TextView) view.findViewById(R.id.tvColuna9);
+            TextView tvColuna11 = (TextView) view.findViewById(R.id.tvColuna9);
 
             // Extract properties from cursor
             String nome = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
@@ -72,9 +80,11 @@ public class PecaCursorAdapter extends CursorAdapter {
             String capacidadeMaxRam = cursor.getString(cursor.getColumnIndexOrThrow("capacidade_max_ram"));
             String tipoRam = cursor.getString(cursor.getColumnIndexOrThrow("tipo_ram"));
             int latRam = cursor.getInt(cursor.getColumnIndexOrThrow("latencia_ram"));
-            String interfaceHD = cursor.getString(cursor.getColumnIndexOrThrow("interface_hd"));
+            String formatoHD = cursor.getString(cursor.getColumnIndexOrThrow("formato_hd"));
             int qtdSata = cursor.getInt(cursor.getColumnIndexOrThrow("qtd_sata"));
             String tamanho = cursor.getString(cursor.getColumnIndexOrThrow("tamanho"));
+            String interfaceHD = cursor.getString(cursor.getColumnIndexOrThrow("interface_hd"));
+            String sckt_pv = cursor.getString(cursor.getColumnIndexOrThrow("socket_pv"));
 
 
             // Populate fields with extracted properties
@@ -84,9 +94,11 @@ public class PecaCursorAdapter extends CursorAdapter {
             tvColuna4.setText(capacidadeMaxRam);
             tvColuna5.setText(tipoRam);
             tvColuna6.setText(String.valueOf(latRam));
-            tvColuna7.setText(interfaceHD);
+            tvColuna7.setText(formatoHD);
             tvColuna8.setText(String.valueOf(qtdSata));
             tvColuna9.setText(tamanho);
+            tvColuna10.setText(interfaceHD);
+            tvColuna11.setText(sckt_pv);
 
         }
         else if(nomePeca == "ram"){
@@ -95,13 +107,12 @@ public class PecaCursorAdapter extends CursorAdapter {
             TextView tvColuna3 = (TextView) view.findViewById(R.id.tvColuna3);
             TextView tvColuna4 = (TextView) view.findViewById(R.id.tvColuna4);
             TextView tvColuna5 = (TextView) view.findViewById(R.id.tvColuna5);
-            TextView tvColuna6 = (TextView) view.findViewById(R.id.tvColuna6);
 
             // Extract properties from cursor
             String nome = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
             int capacidade = cursor.getInt(cursor.getColumnIndexOrThrow("capacidade"));
             int qtdPentes = cursor.getInt(cursor.getColumnIndexOrThrow("qtd_pentes"));
-            String tipo = cursor.getString(cursor.getColumnIndexOrThrow("tipo"));
+            String tipo = cursor.getString(cursor.getColumnIndexOrThrow("tipo_ram"));
             int frequencia = cursor.getInt(cursor.getColumnIndexOrThrow("frequencia"));
 
 
@@ -215,7 +226,7 @@ public class PecaCursorAdapter extends CursorAdapter {
             int memoria = cursor.getInt(cursor.getColumnIndexOrThrow("memoria"));
             int velocidadeGpu = cursor.getInt(cursor.getColumnIndexOrThrow("velocidade_gpu"));
             int velocidadeMemoria = cursor.getInt(cursor.getColumnIndexOrThrow("velocidade_memoria"));
-            String interfaceGPU = cursor.getString(cursor.getColumnIndexOrThrow("interface"));
+            String interfaceGPU = cursor.getString(cursor.getColumnIndexOrThrow("socket_pv"));
             float comprimento = cursor.getFloat(cursor.getColumnIndexOrThrow("comprimento"));
             String tipoMemoria = cursor.getString(cursor.getColumnIndexOrThrow("tipo_memoria"));
 
@@ -245,7 +256,7 @@ public class PecaCursorAdapter extends CursorAdapter {
             String nome = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
             String socket = cursor.getString(cursor.getColumnIndexOrThrow("socket"));
             int velocidade = cursor.getInt(cursor.getColumnIndexOrThrow("velocidade"));
-            int consumo = cursor.getInt(cursor.getColumnIndexOrThrow("consumo"));
+            int consumo = cursor.getInt(cursor.getColumnIndexOrThrow("voltagem"));
 
 
             // Populate fields with extracted properties
