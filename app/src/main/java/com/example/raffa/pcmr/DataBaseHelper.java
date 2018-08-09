@@ -20,7 +20,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //The Android's default system path of your application database.
     private static String DB_PATH = "/data/data/com.example.raffa.pcmr/databases/";
 
-    private static String DB_NAME = "pcmrDB16.db";
+    private static String DB_NAME = "pcmrDB12.db";
 
     private SQLiteDatabase myDataBase;
 
@@ -176,64 +176,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         myDataBase = this.getWritableDatabase();
         String s = "DELETE FROM meu_pc WHERE _id="+"\""+nome+"\";";
         myDataBase.execSQL(s);
-    }
-    public Cursor limitaSocket(String pecanome, String tabela, String pecaatual){
-        Cursor c = myDataBase.query(tabela,null,"_id = \""+pecanome+"\"",null,null,null,null);
-        c.moveToFirst();
-        String sckt = c.getString(c.getColumnIndexOrThrow("socket"));
-        return myDataBase.query(pecaatual,null,"socket = \""+sckt+"\"",null,null,null,null);
-    }
-    public Cursor limitaRAM(String pecanome, String tabela, String pecaatual){
-        Cursor c = myDataBase.query(tabela,null,"_id = \""+pecanome+"\"",null,null,null,null);
-        c.moveToFirst();
-        String sckt = c.getString(c.getColumnIndexOrThrow("tipo_ram"));
-        return myDataBase.query(pecaatual,null,"tipo_ram = \""+sckt+"\"",null,null,null,null);
-    }
-    public Cursor limitaVGA(String pecanome, String tabela, String pecaatual){
-        Cursor c = myDataBase.query(tabela,null,"_id = \""+pecanome+"\"",null,null,null,null);
-        c.moveToFirst();
-        String sckt = c.getString(c.getColumnIndexOrThrow("socket_pv"));
-        return myDataBase.query(pecaatual,null,"socket_pv = \""+sckt+"\"",null,null,null,null);
-    }
-    public Cursor limitaMBALL(String proc,String vga,String ram, String pecaatual){
-        Cursor c = myDataBase.query("processador",null,"_id = \""+proc+"\"",null,null,null,null);
-        c.moveToFirst();
-        String sckt = c.getString(c.getColumnIndexOrThrow("socket"));
-        c = myDataBase.query("ram",null,"_id = \""+ram+"\"",null,null,null,null);
-        c.moveToFirst();
-        String tipo = c.getString(c.getColumnIndexOrThrow("tipo_ram"));
-        c = myDataBase.query("placa_video",null,"_id = \""+vga+"\"",null,null,null,null);
-        c.moveToFirst();
-        String socket_pv = c.getString(c.getColumnIndexOrThrow("socket_pv"));
-
-        return myDataBase.query(pecaatual,null,"socket = \""+sckt+"\" AND tipo_ram = "+"\""+tipo+"\" AND " +
-                "socket_pv = \""+socket_pv+"\"",null,null,null,null);
-    }
-    public Cursor limitaMBPV(String proc, String vga, String pecaatual){
-        Cursor c = myDataBase.query("processador",null,"_id = \""+proc+"\"",null,null,null,null);
-        c.moveToFirst();
-        String sckt = c.getString(c.getColumnIndexOrThrow("socket"));
-        c = myDataBase.query("placa_video",null,"_id = \""+vga+"\"",null,null,null,null);
-        c.moveToFirst();
-        String socket_pv = c.getString(c.getColumnIndexOrThrow("socket_pv"));
-        return myDataBase.query(pecaatual,null,"socket = \""+sckt+"\" AND socket_pv = \""+socket_pv+"\"",null,null,null,null);
-    }
-    public Cursor limitaMBRV(String ram, String vga, String pecaatual){
-        Cursor c = myDataBase.query("ram",null,"_id = \""+ram+"\"",null,null,null,null);
-        c.moveToFirst();
-        String tipo = c.getString(c.getColumnIndexOrThrow("tipo_ram"));
-        c = myDataBase.query("placa_video",null,"_id = \""+vga+"\"",null,null,null,null);
-        c.moveToFirst();
-        String socket_pv = c.getString(c.getColumnIndexOrThrow("socket_pv"));
-        return myDataBase.query(pecaatual,null,"tipo_ram = \""+tipo+"\" AND socket_pv = \""+socket_pv+"\"",null,null,null,null);
-    }
-    public Cursor limitaMBRP(String ram, String proc, String pecaatual){
-        Cursor c = myDataBase.query("ram",null,"_id = \""+ram+"\"",null,null,null,null);
-        c.moveToFirst();
-        String tipo = c.getString(c.getColumnIndexOrThrow("tipo_ram"));
-        c = myDataBase.query("processador",null,"_id = \""+proc+"\"",null,null,null,null);
-        c.moveToFirst();
-        String socket = c.getString(c.getColumnIndexOrThrow("socket"));
-        return myDataBase.query(pecaatual,null,"tipo_ram = \""+tipo+"\" AND socket = \""+socket+"\"",null,null,null,null);
     }
 }
